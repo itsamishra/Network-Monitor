@@ -37,8 +37,7 @@ class ScreenCapture {
         BufferedImage screenshot = this.robot.createScreenCapture(this.screenRect);
         Graphics2D screenshotGraphics2d = screenshot.createGraphics();
         screenshotGraphics2d.setColor(Color.red);
-        screenshotGraphics2d.fill(new Ellipse2D.Float(mousePosition.x - 5, mousePosition.y - 5,
-                10, 10));
+        screenshotGraphics2d.fill(new Ellipse2D.Float(mousePosition.x - 5, mousePosition.y - 5, 10, 10));
         screenshotGraphics2d.dispose();
 
         return screenshot;
@@ -50,7 +49,7 @@ class ScreenCapture {
      */
     String getBase64EncodedScreenshot() throws IOException {
         BufferedImage screenshot = this.getScreenshot();
-        ProgUtil.displayImage(screenshot);
+//        ProgUtil.displayImage(screenshot);
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
