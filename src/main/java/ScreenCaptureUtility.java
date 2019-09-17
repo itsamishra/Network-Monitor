@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.util.Base64;
 
 
-class ScreenCapture {
+class ScreenCaptureUtility {
     private Rectangle screenRect;
     private Robot robot;
     private String base64ImageFormat;
 
 
-    ScreenCapture(String base64ImageFormat) {
+    ScreenCaptureUtility(String base64ImageFormat) {
         try {
             this.robot = new Robot();
         } catch (AWTException e) {
@@ -57,7 +57,7 @@ class ScreenCapture {
         return Base64.getEncoder().encodeToString(byteArrayOutputStream.toByteArray());
     }
 
-    Point getMousePosition() {
+    private Point getMousePosition() {
         return MouseInfo.getPointerInfo().getLocation();
     }
 }

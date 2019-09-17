@@ -6,15 +6,22 @@ public class NetworkMonitor {
         SystemInformation sysInfo = new SystemInformation();
 
         // Gets base64 representation of screenshot (w/ cursor)
-        ScreenCapture screenCapture = new ScreenCapture("png");
+        ScreenCaptureUtility screenCapture = new ScreenCaptureUtility("png");
         sysInfo.setBase64EncodedScreenshot(screenCapture.getBase64EncodedScreenshot());
 
         // Gets list of "major" processes
         // TODO
 
+        // Get CPU usage (%)
+        // TODO
+
         // Gets IP of current machine
         // TODO
-//        socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
-//        ip = socket.getLocalAddress().getHostAddress();
+
+        ProgUtil.print(sysInfo);
+
+        // Start http server
+        Server server =  new Server();
+        server.runServer();
     }
 }

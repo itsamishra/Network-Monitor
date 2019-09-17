@@ -11,4 +11,10 @@ public class SystemInformation {
     public String getBase64EncodedScreenshot() {
         return base64EncodedScreenshot;
     }
+
+    @Override
+    public String toString() {
+        String stringRepresentation = "base64EncodedScreenshot: " + base64EncodedScreenshot;
+        return stringRepresentation;
+    }
 }
