@@ -1,7 +1,7 @@
+import java.io.File;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.text.DecimalFormat;
-
 import com.sun.management.OperatingSystemMXBean;
 
 /** NetworkMonitor class gets data & starts http server */
@@ -22,8 +22,9 @@ public class NetworkMonitor {
         new DecimalFormat("#.##").format(osBean.getTotalPhysicalMemorySize() / 1e+9);
     sysInfo.setSystemRamGb(systemRamGb);
 
-    // Gets list of "major" processes
-    // TODO
+    // Gets size of disk (GB) in current device
+    String systemDiskSizeGb = new DecimalFormat("#.##").format(new File("/").getFreeSpace() / 1e+9);
+    sysInfo.setSystemDiskSizeGb(systemDiskSizeGb);
 
     // Gets IP of current machine
     // TODO

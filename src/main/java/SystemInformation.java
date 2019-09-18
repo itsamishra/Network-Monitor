@@ -12,6 +12,7 @@ public class SystemInformation {
     sysInfoHashMap.put("cpuUsagePercentage", "");
     sysInfoHashMap.put("base64EncodedScreenshot", "");
     sysInfoHashMap.put("systemRamGb", "");
+    sysInfoHashMap.put("systemDiskSizeGb", "");
   }
 
   /** @param base64EncodedScreenshot the new value of base64EncodedScreenshot */
@@ -25,6 +26,10 @@ public class SystemInformation {
 
   void setSystemRamGb(String systemRamGb){
     sysInfoHashMap.put("systemRamGb", systemRamGb);
+  }
+
+  void setSystemDiskSizeGb(String systemDiskSizeGb){
+    sysInfoHashMap.put("systemDiskSizeGb", systemDiskSizeGb);
   }
 
   @Override
