@@ -1,6 +1,10 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.Map;
 
 /** ProgUtil class contains utility methods */
 class ProgUtil {
@@ -22,5 +26,18 @@ class ProgUtil {
     frame.getContentPane().add(new JLabel(new ImageIcon(img)));
     frame.pack();
     frame.setVisible(true);
+  }
+
+  /**
+   * Converts hash map to JSON string using Google's GSON library
+   *
+   * @param sysInfoHashMap hash map containing system information
+   * @return stringify(JSON) of hash map containing system information
+   */
+  public static String hashMapToJsonString(Map<String, String> sysInfoHashMap) {
+    GsonBuilder gsonMapBuilder = new GsonBuilder();
+    Gson gsonObject = gsonMapBuilder.create();
+
+    return gsonObject.toJson(sysInfoHashMap);
   }
 }

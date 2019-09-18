@@ -1,25 +1,40 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /** SystemInformation class holds data regarding current system */
 public class SystemInformation {
-  private String base64EncodedScreenshot;
+  private Map<String, String> sysInfoHashMap = new HashMap<>();
 
-  /** @param base64EncodedScreenshot the new value of base64EncodedScreenshot */
-  public void setBase64EncodedScreenshot(String base64EncodedScreenshot) {
-    this.base64EncodedScreenshot = base64EncodedScreenshot;
+  SystemInformation() {
+    sysInfoHashMap.put("cpuUsagePercentage", "");
+    sysInfoHashMap.put("base64EncodedScreenshot", "");
+    sysInfoHashMap.put("systemRamGb", "");
   }
 
-  public String getBase64EncodedScreenshot() {
-    return base64EncodedScreenshot;
+  /** @param base64EncodedScreenshot the new value of base64EncodedScreenshot */
+  void setBase64EncodedScreenshot(String base64EncodedScreenshot) {
+    sysInfoHashMap.put("base64EncodedScreenshot", base64EncodedScreenshot);
+  }
+
+  void setCpuUsagePercentage(String cpuUsagePercentage){
+    sysInfoHashMap.put("cpuUsagePercentage", cpuUsagePercentage);
+  }
+
+  void setSystemRamGb(String systemRamGb){
+    sysInfoHashMap.put("systemRamGb", systemRamGb);
   }
 
   @Override
   public String toString() {
-    String stringRepresentation = "base64EncodedScreenshot: " + base64EncodedScreenshot;
-    return stringRepresentation;
+    //    String stringRepresentation = "base64EncodedScreenshot: " + base64EncodedScreenshot;
+    return this.toJson();
   }
 
   /** @return JSON representation of SystemInformation object */
-  public String toJson() {
-    // TODO: Use Google GSON to convert Map into JSON
-    return String.format("{\"base64EncodedScreenshot\":\"%s\"}", base64EncodedScreenshot);
+  String toJson() {
+    return ProgUtil.hashMapToJsonString(this.sysInfoHashMap);
   }
 }

@@ -35,7 +35,7 @@ class ScreenCaptureUtility {
     Graphics2D screenshotGraphics2d = screenshot.createGraphics();
     screenshotGraphics2d.setColor(Color.red);
     screenshotGraphics2d.fill(
-        new Ellipse2D.Float(mousePosition.x - 5, mousePosition.y - 5, 10, 10));
+        new Ellipse2D.Float(mousePosition.x - 5, mousePosition.y - 5, 20, 20));
     screenshotGraphics2d.dispose();
 
     return screenshot;

@@ -24,11 +24,7 @@ public class Server extends NanoHTTPD {
 
   @Override
   public Response serve(IHTTPSession session) {
-    ProgUtil.print(session);
     if (session.getMethod() == Method.GET) {
-      //            String itemIdRequestParameter = session.getParms().get("itemId");
-      //            return newFixedLengthResponse("Requested itemId = " + itemIdRequestParameter);
-      //      return newFixedLengthResponse(systemInformation.toJson());
       return newFixedLengthResponse(
           NanoHTTPD.Response.Status.OK, "application/json", systemInformation.toJson());
 
