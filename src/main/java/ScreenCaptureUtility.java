@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Base64;
 
+/** ScreenCaptureUtility object captures screenshot of local machine */
 class ScreenCaptureUtility {
   private Rectangle screenRect;
   private Robot robot;

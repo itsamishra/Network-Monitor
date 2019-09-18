@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+/** NetworkMonitor class gets data & starts http server */
 public class NetworkMonitor {
   public static void main(String[] args) throws IOException {
     // Creates SystemInformation object
@@ -11,7 +12,7 @@ public class NetworkMonitor {
 
     // Gets list of "major" processes
     // TODO
-
+    ProgUtil.print("test");
     // Get CPU usage (%)
     // TODO
 

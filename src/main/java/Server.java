@@ -1,9 +1,7 @@
 import fi.iki.elonen.NanoHTTPD;
-
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 
+/** Server class starts HTTP server in local machine */
 public class Server extends NanoHTTPD {
   private SystemInformation systemInformation;
 

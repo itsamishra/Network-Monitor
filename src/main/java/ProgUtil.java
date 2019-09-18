@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/** ProgUtil class contains utility methods */
 class ProgUtil {
   static void handleException(Exception e) {
     ProgUtil.print("Error:");
