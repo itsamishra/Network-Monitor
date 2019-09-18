@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /** NetworkMonitor class gets data & starts http server */
 public class NetworkMonitor {
@@ -12,14 +14,15 @@ public class NetworkMonitor {
 
     // Gets list of "major" processes
     // TODO
-    ProgUtil.print("test");
+
     // Get CPU usage (%)
     // TODO
 
     // Gets IP of current machine
     // TODO
 
-    ProgUtil.print(sysInfo);
+//    ProgUtil.print(sysInfo);
+    ProgUtil.print(sysInfo.toJson());
 
     // Start http server
     Server server = new Server(sysInfo);
