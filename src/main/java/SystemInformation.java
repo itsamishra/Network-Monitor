@@ -1,6 +1,3 @@
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,6 +10,7 @@ public class SystemInformation {
     sysInfoHashMap.put("base64EncodedScreenshot", "");
     sysInfoHashMap.put("systemRamGb", "");
     sysInfoHashMap.put("systemDiskSizeGb", "");
+    sysInfoHashMap.put("ipAddress", "");
   }
 
   /** @param base64EncodedScreenshot the new value of base64EncodedScreenshot */
@@ -20,15 +18,19 @@ public class SystemInformation {
     sysInfoHashMap.put("base64EncodedScreenshot", base64EncodedScreenshot);
   }
 
-  void setCpuUsagePercentage(String cpuUsagePercentage){
+  void setIpAddress(String ipAddress) {
+    sysInfoHashMap.put("ipAddress", ipAddress);
+  }
+
+  void setCpuUsagePercentage(String cpuUsagePercentage) {
     sysInfoHashMap.put("cpuUsagePercentage", cpuUsagePercentage);
   }
 
-  void setSystemRamGb(String systemRamGb){
+  void setSystemRamGb(String systemRamGb) {
     sysInfoHashMap.put("systemRamGb", systemRamGb);
   }
 
-  void setSystemDiskSizeGb(String systemDiskSizeGb){
+  void setSystemDiskSizeGb(String systemDiskSizeGb) {
     sysInfoHashMap.put("systemDiskSizeGb", systemDiskSizeGb);
   }
 
