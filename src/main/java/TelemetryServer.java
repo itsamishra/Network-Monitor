@@ -2,11 +2,11 @@ import fi.iki.elonen.NanoHTTPD;
 import java.io.IOException;
 
 /** Server class starts HTTP server in local machine */
-public class Server extends NanoHTTPD {
+public class TelemetryServer extends NanoHTTPD {
   private SystemInformation systemInformation;
 
-  public Server(SystemInformation systemInformation) {
-    super(8080);
+  public TelemetryServer(Integer port, SystemInformation systemInformation) {
+    super(port);
 
     this.systemInformation = systemInformation;
   }
@@ -17,8 +17,6 @@ public class Server extends NanoHTTPD {
    * @throws IOException
    */
   void runServer() throws IOException {
-    ProgUtil.print("Starting server on port 8080 ...");
-
     start(NanoHTTPD.SOCKET_READ_TIMEOUT, false);
   }
 

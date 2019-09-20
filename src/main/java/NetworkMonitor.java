@@ -39,10 +39,8 @@ public class NetworkMonitor {
     ScreenCaptureUtility screenCapture = new ScreenCaptureUtility("png");
     sysInfo.setBase64EncodedScreenshot(screenCapture.getBase64EncodedScreenshot());
 
-    ProgUtil.print(sysInfo);
-
-    // Start http server
-    Server server = new Server(sysInfo);
-    server.runServer();
+    // Start telemetry server
+    TelemetryServer telemetryServer = new TelemetryServer(8080, sysInfo);
+    telemetryServer.runServer();
   }
 }

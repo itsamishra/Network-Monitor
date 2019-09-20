@@ -3,6 +3,10 @@ import com.google.gson.GsonBuilder;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Map;
 
 /** ProgUtil class contains utility methods */
@@ -38,5 +42,11 @@ class ProgUtil {
     Gson gsonObject = gsonMapBuilder.create();
 
     return gsonObject.toJson(sysInfoHashMap);
+  }
+
+  // FROM https://stackoverflow.com/a/326440
+  static String readFileToString(String path, Charset encoding) throws IOException {
+    byte[] encoded = Files.readAllBytes(Paths.get(path));
+    return new String(encoded, encoding);
   }
 }
